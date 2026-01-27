@@ -29,13 +29,13 @@ public class HibernateUtil {
 
             // Build SessionFactory using the service registry
             sessionFactory = new org.hibernate.boot.MetadataSources(serviceRegistry)
-                  .addAnnotatedClass(Profesor.class)
-                  .addAnnotatedClass(Tiposbasicos.class)
-                  .addAnnotatedClass(Provincia.class)
-                  .addAnnotatedClass(Modulo.class)
-                  .addAnnotatedClass(Comunidadautonoma.class)
-                  .addAnnotatedClass(Direccion.class)
-                  .addAnnotatedClass(Cicloformativo.class)
+                //   .addAnnotatedClass(Profesor.class)
+                //   .addAnnotatedClass(Tiposbasicos.class)
+                //   .addAnnotatedClass(Provincia.class)
+                //   .addAnnotatedClass(Modulo.class)
+                //   .addAnnotatedClass(Comunidadautonoma.class)
+                //   .addAnnotatedClass(Direccion.class)
+                //   .addAnnotatedClass(Cicloformativo.class)
                     .buildMetadata()
                     .buildSessionFactory();
         } catch (Exception ex) {
