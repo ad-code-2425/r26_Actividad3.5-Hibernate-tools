@@ -5,13 +5,14 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
-import com.example.hibernate.model.Cicloformativo;
-import com.example.hibernate.model.Comunidadautonoma;
+import com.example.hibernate.model.Ciclo;
+import com.example.hibernate.model.ComunidadAutonoma;
+import com.example.hibernate.model.ContactInfo;
 import com.example.hibernate.model.Direccion;
 import com.example.hibernate.model.Modulo;
 import com.example.hibernate.model.Profesor;
 import com.example.hibernate.model.Provincia;
-import com.example.hibernate.model.Tiposbasicos;
+import com.example.hibernate.model.TiposBasicos;
 
 public class HibernateUtil {
 
@@ -23,19 +24,19 @@ public class HibernateUtil {
     private HibernateUtil() {
         try {
             // Automatically reads hibernate.properties or hibernate.cfg.xml from classpath
-            serviceRegistry = 
-            new StandardServiceRegistryBuilder()
-						.build();
+            serviceRegistry = new StandardServiceRegistryBuilder()
+                    .build();
 
             // Build SessionFactory using the service registry
             sessionFactory = new org.hibernate.boot.MetadataSources(serviceRegistry)
-                //   .addAnnotatedClass(Profesor.class)
-                //   .addAnnotatedClass(Tiposbasicos.class)
-                //   .addAnnotatedClass(Provincia.class)
-                //   .addAnnotatedClass(Modulo.class)
-                //   .addAnnotatedClass(Comunidadautonoma.class)
-                //   .addAnnotatedClass(Direccion.class)
-                //   .addAnnotatedClass(Cicloformativo.class)
+                    .addAnnotatedClass(Profesor.class)
+                    .addAnnotatedClass(TiposBasicos.class)
+                    .addAnnotatedClass(Provincia.class)
+                    .addAnnotatedClass(Modulo.class)
+                    .addAnnotatedClass(ComunidadAutonoma.class)
+                    .addAnnotatedClass(Direccion.class)
+                    .addAnnotatedClass(Ciclo.class)
+                    .addAnnotatedClass(ContactInfo.class)
                     .buildMetadata()
                     .buildSessionFactory();
         } catch (Exception ex) {
