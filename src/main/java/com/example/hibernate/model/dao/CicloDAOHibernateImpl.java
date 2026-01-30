@@ -21,7 +21,7 @@ public class CicloDAOHibernateImpl implements ICicloDAO {
     @Override
     public List<Ciclo> findAll() {
         try (Session session = sessionFactory.openSession()) {
-            Query<Ciclo> query = session.createQuery("from Cicloformativo", Ciclo.class);
+            Query<Ciclo> query = session.createQuery("from Ciclo", Ciclo.class);
             return query.list();
         }
     }
